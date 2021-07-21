@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<QCARConfig>
+<Tracking>
+<ModelTarget name="joint0" motionHint="static" trackingMode="default"/>
+
+</Tracking>
+
+<Assembly name="joint0s_assembly" assemblyId="8bdd7a09fcc24e44909c21581b428986">
+<Part name="joint0" translation="0 0 0" rotation="AD: 0 0 1 0"/>
+<EntryPoint name="joint0" translation="0.0582702 0.0295693 0.320261" rotation="AD: 0.9999806547204447 0.12093373549631009 -0.057335883305091054 129.66" trained="no">
+
+</EntryPoint>
+
+</Assembly>
+
+</QCARConfig>

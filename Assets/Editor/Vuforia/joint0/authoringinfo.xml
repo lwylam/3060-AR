@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<QCARInfo>
+<TargetSet version="14.0" toolVersion="9.7.4">
+<ModelTarget name="joint0" targetId="a61f7b7a7c4045a7a7d17b066fe15a35" version="11.1" toolVersion="9.7.4" bbox="-0.062500 -0.062500 -0.005000 0.182500 0.062500 0.058000" previewImage="a61f7b7a7c4045a7a7d17b066fe15a35_preview.jpg"/>
+
+</TargetSet>
+
+<Assembly name="joint0s_assembly" assemblyId="8bdd7a09fcc24e44909c21581b428986">
+<Part name="joint0" translation="0 0 0" rotation="AD: 0 0 1 0"/>
+<EntryPoint name="joint0" translation="0.0582702 0.0295693 0.320261" rotation="AD: 0.9999806547204447 0.12093373549631009 -0.057335883305091054 129.66" image="joint0_joint0.png" trained="no">
+
+</EntryPoint>
+
+</Assembly>
+
+</QCARInfo>
