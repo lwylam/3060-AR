@@ -14,17 +14,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   vuforia:
     vuforiaLicenseKey: AcnrP/v/////AAABmZAJSAX5gUkhgQ69Sv3cBV8WCMQr0gEfZJeRWrbbbzOtZUbUovN7cdne9HjzKZh9gMtZB+xtYNOJhV/cOIyhNzBULx0ZgATv+CK7rApR6DlJ/S2l+p/Fpxd5lUp+MIb5oXLmO2K4wP70WRWyZdHUKFxglhCXZ32KTluBSP9G6NPSk55kpPCVjYzuOk317R1wVLdbL8f7Zd1g3+lSZ95/BVqvP65fIGY9LEdyqZdzVY+kkPHUkYZEgneQGwk5jx9FWkTmfP+pdTfU6LnyJerJIq2LK22xdeSzwL23mI4Y8bOsXbF3lY+Xrpc2akApgqrJY6cV2RycBaO5n4dAdotm4bgj5eiFnrAovgGH5/Q2dO8I
-    ufoLicenseKey: QVY2VmNOci8vLy8vQUFBQUtKaTVwWkNUOEVDd21QbzRhZWEzTnltYjJMVWNNbmhQNmIzcUtmcDRhSXllRlcxdHBUTHk5cGp1cjZpRkx2aUhKdytsMnZDeXNPazJaYldGZmRjcUFrM0dPR29LNjIrQU00TEFVbExudkRrS3JxU0c5RDJpOXdzREY1aVBXTTN0cjcvTkZlZ0NEai83U2tDbWpMQlU5ekxDYUc5ejdsajkrVjl3QlhWOERVVDgvYlZRRWNXTnE0MUk3b3RScnRKSWkwaXp1YVBhcUJndWFlb3BUQVljR1VoM3NMSytwOTR3VHN0UWhnK1pHakV3bllxYXI3MElhYUh0Qml4YTN6SGN4OFFWOW94VXU0NUtKY3hGRndWL3RlWGVYQmpwMzhWdEE3bDl3eDhzUWQ3WERIMzUwcXhSZXVsRk5DakNSanN6WTlHZ3B2RFNWMTRqQStDQVU1eUVYNC9KQTNjRm50NVY4bnRIQ28ySE1iWDI=
+    ufoLicenseKey: QVU4RmFWSC8vLy8vQUFBQUtGNmhLZUorNzBKSXRuam44UDg2eUt3QjRRSm9TVzhCWnlidGpSSi9WdE9WVnN6cjE1Z3BQUmpiL0MvV0MzYnVlanphNStzL2FvNmV2WGt4di8zcldidi83L1o2UXRoUy9MVTFiZ3NLMEUwTldFbXBwcStpTnc0MDFVYkdLaDRkZ0kzUm9tN2RJWTFhTXBNRHZMVUM2MUNXVE56TUxyQkNNMnYzdVplcUhsSTlabmNWMDI4QjQ2T05KNDBndGZqc0pBN05PQjlSK212QVBXY21xTGdsdWJNUjIrdzlxWFY3S2tOSmw0d1hRN3pML2ovN3lFbTBWclVicXBYcTVnZFU3cEp2Qms3NTNzMm1vT0ljOXgwNnFhSmVHczRiWStrTWJTNXRFOE5JamgxZnV2YmxtZU10WGNSY0dnZDQ5UzJrM3h3Q1kxMkNSRDQxaHdiZHg3K2duZlZtSkk2MDFpT2hEaXhRY0hKQms4T2w=
     delayedInitialization: 0
     cameraDeviceModeSetting: -1
     maxSimultaneousImageTargets: 1
-    maxSimultaneousObjectTargets: 1
+    maxSimultaneousObjectTargets: 4
     virtualSceneScaleFactor: 1
     useDelayedLoadingObjectTargets: 0
     modelTargetRecoWhileExtendedTracked: 1
     shareRecordingsInITunes: 0
-    version: 9.7.5
-    eulaAcceptedVersions: '{"Values":["8.1","7.5","7.1","7.2","7.7","8.0","0.0","8.3","9.1","9.3","9.4","9.6","9.7"]}'
+    version: 9.8.11
+    eulaAcceptedVersions: '{"Values":["8.1","7.5","7.1","7.2","7.7","8.0","0.0","8.3","9.1","9.3","9.4","9.6","9.7","9.8"]}'
   database:
     disableModelExtraction: 0
   shaders:
