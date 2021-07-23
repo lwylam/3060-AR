@@ -14,4 +14,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/ARDemo.unity
     guid: cec7890405a2ef74bb17c32372ad2c48
+  - enabled: 1
+    path: Assets/Scenes/ARWorkSpace.unity
+    guid: 7ad6860505a266c4cbe05f8c8411cb04
   m_configObjects: {}
