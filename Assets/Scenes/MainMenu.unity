@@ -1975,8 +1975,7 @@ MonoBehaviour:
   m_text: 'Welcome words here to all the users :)
 
 
-    Hope you find this panel
-    useful.'
+    Hope you find this app useful.'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
