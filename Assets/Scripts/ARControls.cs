@@ -70,6 +70,8 @@ public class ARControls : MonoBehaviour
         lineRenderer.SetPosition(1, subEnd);
 
         ptHead.transform.SetPositionAndRotation(end, Quaternion.LookRotation(end - origin));
+        
+        // OnRequestJoint();
 
         //if (!camAvailable){ return; }
         //float ratio = (float)backCam.width / (float)backCam.height;
@@ -80,12 +82,7 @@ public class ARControls : MonoBehaviour
         //bg.rectTransform.localEulerAngles = new Vector3(0,0,orient);
     }
 
-    public void OnBack()
-    {
-        SceneManager.LoadScene("MainMenu");
-    }
-
-    public void OnUpdateJoint()
+    public void OnUpdateJoint() // async
     {
         float j1 = Slide1.value;
         float j2 = Slide2.value;
@@ -96,37 +93,19 @@ public class ARControls : MonoBehaviour
         Jnt1.transform.localRotation = Quaternion.Euler(0, 180 - j1, 0);
         Jnt2.transform.localRotation = Quaternion.Euler(j2, -90, 0);
         Jnt3.transform.localRotation = Quaternion.Euler(j3 - 90, 0, 0);
+
+        //var otherValues = new Dictionary<string, string>
+        //    {
+        //        { "armID", "2" },
+        //        { "servoID", "0" },    //  should be "0", "1" or "2"
+        //        { "angle", System.Convert.ToInt32(j1).ToString() }     // value range: 0 - 180
+        //    };
+
+        //var otherContent = new FormUrlEncodedContent(otherValues);
+        //var response = await client.PostAsync("http://maeg3060.mae.cuhk.edu.hk/writeAngle", otherContent);   // url for real http server: "http://maeg3060.mae.cuhk.edu.hk/writeAngle"
+        //var responseString = await response.Content.ReadAsStringAsync();  // responseString should be an empty string
+        //infoTxt.text = responseString;
     }
-
-    public async void OnRequestJoint()
-    {
-        // read angle from http server
-        var values = new Dictionary<string, string>
-        {
-            { "armID", "1" }
-        };
-        FormUrlEncodedContent content = new FormUrlEncodedContent(values);
-        try
-        {
-            HttpResponseMessage response = await client.PostAsync("http://127.0.0.1/readAngle", content); // url for real http server: "http://maeg3060.mae.cuhk.edu.hk/readAngle"
-            string responseString = await response.Content.ReadAsStringAsync(); // responseString should be "100,150,50"
-
-            char[] delim = { ',' };
-            int[] j = responseString.Split(delim).Select(s => int.Parse(s)).ToArray();
-
-            infoTxt.text = $"J1: {j[0]};	J2: {j[1]};	J3: {j[2]}";
-
-            Jnt1.transform.localRotation = Quaternion.Euler(0, 180 - j[0], 0);
-            Jnt2.transform.localRotation = Quaternion.Euler(j[1], -90, 0);
-            Jnt3.transform.localRotation = Quaternion.Euler(j[2] - 90, 0, 0);
-        }
-        catch (System.Exception e)
-        {
-            infoTxt.text = $"Error msg:{e.Message}";
-            Debug.Log(e.Message);
-        }
-    }
-
 
     public void OnUpdateFrmScale()
     {
@@ -148,33 +127,19 @@ public class ARControls : MonoBehaviour
         }
     }
 
-    public void ResetDeviceTracker()
+    public async void OnMoveJointAsync()
     {
-        var objTracker = TrackerManager.Instance.GetTracker<ObjectTracker>();
-        if (objTracker != null && objTracker.IsActive)
-        {
-            Debug.Log("Stopping the ObjectTracker...");
-            objTracker.Stop();
-
-            // Create a temporary list of active datasets to prevent
-            // InvalidOperationException caused by modifying the active
-            // dataset list while iterating through it
-            List<DataSet> activeDataSets = objTracker.GetActiveDataSets().ToList();
-
-            // Reset active datasets
-            foreach (DataSet dataset in activeDataSets)
+        // set angle
+        var otherValues = new Dictionary<string, string>
             {
-                objTracker.DeactivateDataSet(dataset);
-                objTracker.ActivateDataSet(dataset);
-            }
+                { "armID", "1" },
+                { "servoID", "0" },    //  should be "0", "1" or "2"
+                { "angle", "0" }     // value range: 0 - 180
+            };
 
-            Debug.Log("Restarting the ObjectTracker...");
-            objTracker.Start();
-        }
-
-        var deviceTracker = TrackerManager.Instance.GetTracker<PositionalDeviceTracker>();
-
-        if (deviceTracker != null && deviceTracker.Reset()) { Debug.Log("Successfully reset device tracker"); }
-        else { Debug.LogError("Failed to reset device tracker"); }
+        var otherContent = new FormUrlEncodedContent(otherValues);
+        var response = await client.PostAsync("http://maeg3060.mae.cuhk.edu.hk/writeAngle", otherContent);   // url for real http server: "http://maeg3060.mae.cuhk.edu.hk/writeAngle"
+        var responseString = await response.Content.ReadAsStringAsync();  // responseString should be an empty string
+        infoTxt.text = responseString;
     }
 }
