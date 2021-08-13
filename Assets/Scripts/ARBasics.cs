@@ -61,7 +61,7 @@ public class ARBasics : MonoBehaviour
         catch (System.Exception e)
         {
             infoTxt.text = $"Error msg:{e.Message}";
-            Debug.Log(e.Message);
+            //Debug.Log(e.Message);
         }
     }
 
